@@ -1,0 +1,27 @@
+{
+    "name": "fluzo/blog",
+    "description": "Gestor de blog para Laravel 4.",
+    "keywords": ["laravel", "blog"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Javi",
+            "email": "fluzo.info@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers",
+            "src/models"            
+        ],
+        "psr-0": {
+            "Fluzo\\Blog\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
