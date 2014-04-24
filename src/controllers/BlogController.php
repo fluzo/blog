@@ -31,7 +31,7 @@ class BlogController extends BaseController
             App::abort(404);
         }
         $articulos = Articulo::where('categoria_id', '=', $categoria_id)->orderBy('updated_at', 'desc')->paginate(5);
-        return View::make('blog::listado')->with('articulos', $articulos);
+        return View::make('blog::listado')->with(array('articulos' => $articulos, 'categoria' => $categoria));
     }
 
 }

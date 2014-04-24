@@ -6,26 +6,34 @@
 
 <h1>Blog</h1>
 <hr />
-<h2>{{ $articulo->titulo }}</h2>
-<p class="texto-secundario">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</p>    
-@foreach ($categoria as $datos)
-<p>Categoria: <a href="{{route('blog')}}/categoria/{{$datos->slug}}">{{ $datos->nombre }}</a></p>
-@endforeach
-<hr />
-<p>{{ $articulo->cuerpo }}</p>
-<hr />
-<h2>Comentarios</h2>
+<article>
+    <header>
+        <h2>{{ $articulo->titulo }}</h2>
+        <p class="texto-secundario"><time datetime="{{$articulo->updated_at}}">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</time></p>    
+        @foreach ($categoria as $datos)
+        <p>Categoria: <a href="{{route('blog')}}/categoria/{{$datos->slug}}">{{ $datos->nombre }}</a></p>
+        @endforeach    
+        <hr />    
+    </header>
+    <p>{{ $articulo->cuerpo }}</p>
 
-@foreach ($comentarios as $comentario)
-<div class="comentarios">
-    <div class="cabecera-comentarios">
-        <p class="autor-comentario"><a href="">{{ $comentario->autor }}</a></p>
-        <p class="texto-secundario">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($comentario->created_at))) }}</p>
+    <hr />
+    <h2>Comentarios</h2>
+    @foreach ($comentarios as $comentario)
+    <div class="comentarios">
+        <article>   
+            <div class="cabecera-comentarios">              
+                <header>
+                    <p class="autor-comentario"><a href="">{{ $comentario->autor }}</a></p>
+                    <p class="texto-secundario">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($comentario->created_at))) }}</p>
+                </header>
+            </div>
+            <p class="cuerpo-comentarios">{{{ $comentario->cuerpo }}}</p>
+        </article>
     </div>
-    <p class="cuerpo-comentarios">{{{ $comentario->cuerpo }}}</p>
-</div>
+</article>
 @endforeach
-<?php echo $comentarios->links(); ?>
+<nav><?php echo $comentarios->links(); ?></nav>
 
 @stop
 
