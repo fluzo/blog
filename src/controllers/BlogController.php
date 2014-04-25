@@ -8,7 +8,8 @@ class BlogController extends BaseController
     public function listado()
     {
         $articulos = Articulo::orderBy('updated_at', 'desc')->paginate(5);
-        return View::make('blog::listado')->with('articulos', $articulos);
+        $categorias = Categoria::all();
+        return View::make('blog::listado')->with(array('articulos' => $articulos, 'categorias' => $categorias));
     }
 
     public function mostrar($slug = null)
@@ -31,7 +32,8 @@ class BlogController extends BaseController
             App::abort(404);
         }
         $articulos = Articulo::where('categoria_id', '=', $categoria_id)->orderBy('updated_at', 'desc')->paginate(5);
-        return View::make('blog::listado')->with(array('articulos' => $articulos, 'categoria' => $categoria));
+        $categorias = Categoria::all();
+        return View::make('blog::listado')->with(array('articulos' => $articulos, 'categoria_seleccionada' => $categoria, 'categorias' => $categorias));
     }
 
 }

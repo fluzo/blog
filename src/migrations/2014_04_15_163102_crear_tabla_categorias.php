@@ -16,7 +16,7 @@ class CrearTablaCategorias extends Migration {
 		{
 			$table->increments('id');
                         $table->string('nombre',50);
-                        $table->string('slug',70);
+                        $table->string('slug',70)->unique();
 			$table->timestamps();
 		});
 	}

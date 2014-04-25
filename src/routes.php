@@ -15,4 +15,4 @@ Route::get('blog', array('as' => 'blog', 'uses' => 'BlogController@listado'));
 
 Route::get('blog/{slug?}','BlogController@mostrar','slug');
 
-Route::get('blog/categoria/{categoria}','BlogController@listadoCategoria','categoria');
+Route::get('blog/categoria/{categoria}',array('as' => 'blog-categoria', 'uses' =>  'BlogController@listadoCategoria',),'categoria');

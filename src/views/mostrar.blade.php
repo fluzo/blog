@@ -1,4 +1,10 @@
 @extends('blog::base')
+
+@section('head')
+@parent
+<meta name="description" content="{{ $articulo->meta_description }}" />
+@stop
+
 @section('title')
 {{ $articulo->titulo }}
 @stop
@@ -18,7 +24,7 @@
     <p>{{ $articulo->cuerpo }}</p>
 
     <hr />
-    <h2>Comentarios</h2>
+<!--    <h2>Comentarios</h2> ¡¡¡ PENDIENTE !!!-->
     @foreach ($comentarios as $comentario)
     <div class="comentarios">
         <article>   

@@ -1,0 +1,30 @@
+/******************************************************************************/
+/*** PAQUETE BLOG *********************************************************/
+#cuerpo { 
+    width: 58%; 
+}
+.articulos-portada {
+    background-image: linear-gradient(to bottom, #F5F5F5 0px, #E8E8E8 100%);
+    background-repeat: repeat-x;
+    border: thin solid #C0C0C0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.comentarios {
+    border: thin solid #C0C0C0;    
+    margin-bottom: 15px;
+    border-radius: 5px;    
+}
+.cabecera-comentarios {
+    border-radius: 2px;
+    padding: 10px;    
+}
+.cuerpo-comentarios {
+    padding: 10px;
+}
+.listado-categorias h1, h3 {
+    display: inline;
+}
+
+

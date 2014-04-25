@@ -18,6 +18,7 @@ class CrearTablaArticulos extends Migration {
                         $table->string('titulo',300);
                         $table->text('cuerpo');
                         $table->string('slug',350);
+                        $table->string('meta_description',300);
                         $table->integer('categoria_id')->unsigned();
                         $table->foreign('categoria_id')->references('id')->on('categorias');
 			$table->timestamps();
