@@ -20,8 +20,12 @@
 .cuerpo-comentarios {
     padding: 10px;
 }
-.listado-categorias h1, h3 {
+.listado-categorias > h1{
     display: inline;
+}
+.listado-categorias > h3 {
+    display: inline;
+    color: #999999;
 }
 
 
