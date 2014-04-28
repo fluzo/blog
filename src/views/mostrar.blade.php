@@ -21,7 +21,7 @@
         @endforeach    
         <hr />    
     </header>
-    <p>{{{ $articulo->cuerpo }}}</p>
+    <p>{{ $articulo->cuerpo }}</p>
     <hr />
 <!--    <h2>Comentarios</h2> ¡¡¡ PENDIENTE !!!-->
     @foreach ($comentarios as $comentario)
