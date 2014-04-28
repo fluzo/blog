@@ -15,14 +15,13 @@
 <article>
     <header>
         <h2>{{ $articulo->titulo }}</h2>
-        <p class="texto-secundario"><time datetime="{{$articulo->updated_at}}">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</time></p>    
+        <span class="texto-secundario"><time datetime="{{$articulo->updated_at}}">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</time></span>    
         @foreach ($categoria as $datos)
         <p>Categoria: <a href="{{route('blog')}}/categoria/{{$datos->slug}}">{{ $datos->nombre }}</a></p>
         @endforeach    
         <hr />    
     </header>
-    <p>{{ $articulo->cuerpo }}</p>
-
+    <p>{{{ $articulo->cuerpo }}}</p>
     <hr />
 <!--    <h2>Comentarios</h2> ¡¡¡ PENDIENTE !!!-->
     @foreach ($comentarios as $comentario)
