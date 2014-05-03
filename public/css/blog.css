@@ -5,7 +5,7 @@
     background-repeat: repeat-x;
     border: thin solid #C0C0C0;
     border-radius: 5px;
-    padding: 15px;
+    padding: 15px 15px 0px 15px;
     margin-bottom: 15px;
 }
 .comentarios {
@@ -18,7 +18,7 @@
     padding: 10px;    
 }
 .cuerpo-comentarios {
-    padding: 10px;
+    padding: 0px 10px 10px;
 }
 .listado-categorias > h1{
     display: inline;
@@ -26,6 +26,21 @@
 .listado-categorias > h3 {
     display: inline;
     color: #999999;
+}
+#formulario-comentario input[type="text"] {
+    width: 40%;
+}
+#formulario-comentario textarea {
+    width: 80%;
+    height: 300px;
+}
+#vista-previa-comentario {
+    background-image: linear-gradient(to bottom, #F5F5F5 0px, #E8E8E8 100%);
+    background-repeat: repeat-x;
+    border: thin solid #C0C0C0;
+    border-radius: 5px;
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 15px;
 }
 
 

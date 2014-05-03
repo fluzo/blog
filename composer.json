@@ -17,7 +17,9 @@
         "classmap": [
             "src/migrations",
             "src/controllers",
-            "src/models"
+            "src/models",
+            "src/utilidades"
+            
         ],
         "psr-0": {
             "Fluzo\\Blog\\": "src/"

@@ -14,5 +14,11 @@
 Route::get('blog', array('as' => 'blog', 'uses' => 'BlogController@listado'));
 
 Route::get('blog/{slug?}','BlogController@mostrar','slug');
+Route::post('blog/{slug?}',array('before' => 'csrf', 'as' => 'blog-articulo', 'uses' =>  'BlogController@validaComentario',),'slug');
 
 Route::get('blog/categoria/{categoria}',array('as' => 'blog-categoria', 'uses' =>  'BlogController@listadoCategoria',),'categoria');
+
+Route::get('admin', array('before' => 'auth', function()
+{
+    Return View::make('admin');
+}));
