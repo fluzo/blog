@@ -18,7 +18,10 @@ Route::post('blog/{slug?}',array('before' => 'csrf', 'as' => 'blog-articulo', 'u
 
 Route::get('blog/categoria/{categoria}',array('as' => 'blog-categoria', 'uses' =>  'BlogController@listadoCategoria',),'categoria');
 
-Route::get('admin', array('before' => 'auth', function()
+Route::get('admin/blog', array('before' => 'auth.admin', 'as' => 'admin-blog', function()
 {
-    Return View::make('admin');
+    Return View::make('blog::admin');
 }));
+Route::get('admin/blog/pendiente',array('before' => 'auth.admin', 'as' => 'admin-blog-pendiente', 'uses' =>  'AdminController@mostrar'));
+Route::get('admin/blog/aprobar/{id_comentario}',array('before' => 'auth.admin', 'as' => 'admin-blog-aprobar', 'uses' =>  'AdminController@aprobar'));
+Route::get('admin/blog/eliminar/{id_comentario}',array('before' => 'auth.admin', 'as' => 'admin-blog-eliminar', 'uses' =>  'AdminController@eliminar'));

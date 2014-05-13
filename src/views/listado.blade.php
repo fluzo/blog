@@ -8,10 +8,9 @@ Blog
 @stop
 
 @section('cuerpo')
-<div class="listado-categorias"><h1>Blog</h1><h3>{{{ isset($categoria_seleccionada) ?  ' :: '.$articulos->first()->categoria->nombre : '' }}}</h3></div>
+<h1>Blog<small>{{{ isset($categoria_seleccionada) ?  ' :: '.$articulos->first()->categoria->nombre : '' }}}</small></h1>
 <hr />
-
-<select onchange="location = this.options[this.selectedIndex].value;">
+<select class="form-control select-categorias" onchange="location = this.options[this.selectedIndex].value;">
     <option value="{{route('blog')}}">Categorías</option>
     @foreach ($categorias as $categoria)
     @if ((isset($categoria_seleccionada)) and ($categoria_seleccionada === $categoria->slug ))
@@ -22,13 +21,12 @@ Blog
     @endforeach
 </select>
 
-<br /><br />
 
 @foreach ($articulos as $articulo)
-<section class="articulos-portada">
+<section class="articulos-portada well">
     <h3><a href="{{route('blog')}}/{{$articulo->slug}}-{{$articulo->id}}">{{ $articulo->titulo }}</a></h3>
-    <span class="texto-secundario">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</span> 
-    <p>Categoria: <a href="{{route('blog')}}/categoria/{{$articulo->categoria->slug}}">{{ $articulo->categoria->nombre }}</a></p>
+    <h4><small>{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</small></h4>
+    <h5>Categoria: <a href="{{route('blog')}}/categoria/{{$articulo->categoria->slug}}">{{ $articulo->categoria->nombre }}</a></h5>
 </section>
 @endforeach
 <nav><?php echo $articulos->links(); ?></nav>

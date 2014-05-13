@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    alert ('blog.js original!!!!!!!!!!!!!!!!!');
+    $('#div-email').hide();
 });

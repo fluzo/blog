@@ -18,6 +18,7 @@ class CrearTablaComentarios extends Migration {
                         $table->string('autor',25);
                         $table->text('cuerpo');
                         $table->integer('articulo_id')->unsigned();
+                        $table->boolean('aprobado')->default(false);	
 			$table->timestamps();
 		});
 	}

@@ -1,6 +1,30 @@
 /******************************************************************************/
 /*** PAQUETE BLOG *********************************************************/
-.articulos-portada {
+.select-categorias {
+    width: 30%;
+    font-size: 120%;
+    font-weight: bold;
+    height: 40px;
+    margin-bottom: 15px;
+}
+.comentarios {
+    border: thin solid #C0C0C0;    
+    margin-bottom: 15px;
+    border-radius: 5px;    
+}
+.cabecera-comentarios {
+    border-radius: 2px;
+    padding: 10px;    
+    margin-bottom: 10px;    
+}
+.cuerpo-comentarios {
+    padding: 0px 10px 10px;
+}
+
+
+
+
+/*.articulos-portada {
     background-image: linear-gradient(to bottom, #F5F5F5 0px, #E8E8E8 100%);
     background-repeat: repeat-x;
     border: thin solid #C0C0C0;
@@ -16,6 +40,8 @@
 .cabecera-comentarios {
     border-radius: 2px;
     padding: 10px;    
+    margin-bottom: 10px;
+    border-bottom: solid thin silver;
 }
 .cuerpo-comentarios {
     padding: 0px 10px 10px;
@@ -42,5 +68,4 @@
     padding: 15px 15px 15px 15px;
     margin-bottom: 15px;
 }
-
-
+*/
