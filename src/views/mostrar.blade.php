@@ -71,7 +71,7 @@
 {{ Form::label('mensaje', 'Mensaje') }}
 {{ Form::textarea('mensaje',null,array('class' => 'form-control', 'rows' => '15')) }}
 </div>
-<span>Todos los comentarios son revisados antes de publicarse.</span><br>
+<span class="text-danger">Todos los comentarios son revisados antes de publicarse.</span><br>
 <span>Etiquetas permitidas: <code>&lt;strong&gt;, &lt;a&gt;, &lt;pre&gt;</code>.</span><br>
 <span>Ejemplos de uso:</span>
 <ul>
