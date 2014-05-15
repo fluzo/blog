@@ -29,7 +29,7 @@ Blog
     <h5>Categoria: <a href="{{route('blog')}}/categoria/{{$articulo->categoria->slug}}">{{ $articulo->categoria->nombre }}</a></h5>
 </section>
 @endforeach
-<nav><?php echo $articulos->links(); ?></nav>
+<nav class="texto-centrado"><?php echo $articulos->links(); ?></nav>
 @stop
 
 

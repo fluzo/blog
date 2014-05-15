@@ -7,12 +7,13 @@ class AdminController extends BaseController
 
     public function mostrar()
     {
-        App::error(function(ModelNotFoundException $e)
-        {
-            return View::make('blog::pendiente')->with('comentarios', null);
-        });
+//        App::error(function(ModelNotFoundException $e)
+//        {
+//            return View::make('blog::pendiente')->with('comentarios', null);
+//        });
         // Comentarios de articulos pendientes de aprobación
-        $comentarios = Comentario::where('aprobado', '=', false)->orderBy('created_at', 'asc')->firstOrFail()->paginate(1);
+        $comentarios = Comentario::where('aprobado', '=', false)->orderBy('created_at', 'asc')->paginate(1);
+        if (is_null($comentarios->first())) { $comentarios=null; }
         return View::make('blog::pendiente')->with('comentarios', $comentarios);
     }
 

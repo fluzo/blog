@@ -24,8 +24,8 @@ Administracion
             <div class="cuerpo-comentarios">{{ $comentario->cuerpo }}</div>
         </article>
     </div>
+    @endforeach    
 </article>
-@endforeach
 <a href="/admin/blog/eliminar/{{ $comentario->id }}" class="btn btn-danger">Eliminar</a>
 <a href="/admin/blog/aprobar/{{ $comentario->id }}" class="btn btn-success pull-right">Aprobar</a>
 <nav class="texto-centrado"><?php echo $comentarios->links(); ?></nav>
