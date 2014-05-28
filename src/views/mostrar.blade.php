@@ -41,6 +41,11 @@
 @endforeach
 <nav class="texto-centrado"><?php echo $comentarios->links(); ?></nav>
 
+{{-- Mensaje de confirmación de envio de post --}}
+@if (isset($confirmacion)) 
+<br><br>
+<p id="confirmacion" class="alert alert-success">{{ $confirmacion }}</p>
+@endif
 
 <h3>Añadir comentario</h3>
 @include ('blog::errores')

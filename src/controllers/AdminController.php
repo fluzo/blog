@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-
 class AdminController extends BaseController
 {
 

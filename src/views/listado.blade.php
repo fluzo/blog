@@ -4,7 +4,7 @@
 <meta name="description" content="Listado de artículos sobre {{{ isset($categoria_seleccionada) ? $articulos->first()->categoria->nombre : 'cualquier categoria.' }}}" />
 @stop
 @section('title')
-Blog
+Blog :: {{{ isset($categoria_seleccionada) ?  ' :: '.$articulos->first()->categoria->nombre : 'Todo' }}}
 @stop
 
 @section('cuerpo')

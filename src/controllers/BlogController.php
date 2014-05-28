@@ -28,7 +28,7 @@ class BlogController extends BaseController
                 $comentario->articulo_id = Input::get('articulo_id');
                 $comentario->save();
 
-                return Redirect::to(Request::path());
+                return Redirect::to(Request::path(). '#confirmacion')->with('confirmacion','Comentario enviado, se publicara cuando sea revisado, gracias.');
             }
         }
         else
@@ -52,7 +52,8 @@ class BlogController extends BaseController
         $articulo = Articulo::where('id', '=', $id)->where('slug', '=', $slug)->firstOrFail();
         $categoria = Categoria::where('id', '=', $articulo->categoria_id)->get();
         $comentarios = Comentario::where('articulo_id', '=', $articulo->id)->where('aprobado','=',true)->orderBy('created_at', 'asc')->paginate(10);
-        return View::make('blog::mostrar')->with(array('articulo' => $articulo, 'categoria' => $categoria, 'comentarios' => $comentarios));
+        return View::make('blog::mostrar')->with(array('articulo' => $articulo, 'categoria' => $categoria, 'comentarios' => $comentarios,
+            'confirmacion' => Session::get('confirmacion')));
     }
 
     public function listadoCategoria($categoria = null)
