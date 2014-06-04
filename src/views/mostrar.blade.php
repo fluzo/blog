@@ -13,8 +13,11 @@
 <hr />
 <article>
     <header>
-        <h2>{{ $articulo->titulo }}</h2>
-        <h4><small><time datetime="{{$articulo->updated_at}}">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</time></small></h4>    
+        <h2>{{ $articulo->titulo }}</h2>                
+        
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-size="large" data-related="fluzo_info">Twittear</a>
+        
+        <h4><small><time datetime="{{$articulo->updated_at}}">{{ ucwords(strftime("%A, %d %B %Y - %H:%M",strtotime($articulo->updated_at))) }}</time></small></h4>                                      
         @foreach ($categoria as $datos)
         <h5>Categoria: <a href="{{route('blog')}}/categoria/{{$datos->slug}}">{{ $datos->nombre }}</a></h5>
         @endforeach    
@@ -22,7 +25,7 @@
     </header>
     <p>{{ $articulo->cuerpo }}</p>
     <hr />
-    
+
     {{------------------ COMENTARIOS --------------------}}
     <h2>Comentarios</h2>    
     @foreach ($comentarios as $comentario)
@@ -55,26 +58,26 @@
 <h3 id="vista-previa">Vista previa</h3>
 
 <div id="vista-previa-comentario" class="well">
-{{ Session::get('mensaje', '') }}
+    {{ Session::get('mensaje', '') }}
 </div>
 @endif
 
 {{ Form::open(array('url' => Request::path(),'id' => 'formulario-comentario','role' => 'form', 'class' => 'well well-lg')) }}
 <div class="form-group">
-{{ Form::label('nombre', 'Nombre') }}
-{{ Form::text('nombre',null,array('class' => 'form-control')) }}
+    {{ Form::label('nombre', 'Nombre') }}
+    {{ Form::text('nombre',null,array('class' => 'form-control')) }}
 </div>
 
 {{-- Este campo no aparecera en el formulario, se ocultara via jquery --}}
 <div id="div-email" class="form-group">
-{{ Form::label('email', 'Email') }}
-{{ Form::text('email',null,array('class' => 'form-control')) }}
+    {{ Form::label('email', 'Email') }}
+    {{ Form::text('email',null,array('class' => 'form-control')) }}
 </div>
 
 
 <div class="form-group">
-{{ Form::label('mensaje', 'Mensaje') }}
-{{ Form::textarea('mensaje',null,array('class' => 'form-control', 'rows' => '15')) }}
+    {{ Form::label('mensaje', 'Mensaje') }}
+    {{ Form::textarea('mensaje',null,array('class' => 'form-control', 'rows' => '15')) }}
 </div>
 <span class="text-danger">Todos los comentarios son revisados antes de publicarse.</span><br>
 <span>Etiquetas permitidas: <code>&lt;strong&gt;, &lt;a&gt;, &lt;pre&gt;</code>.</span><br>
@@ -88,7 +91,7 @@
 <br />
 {{ Form::submit('Vista previa',array('name'=>'boton','class' => 'btn btn-success btn-lg')) }}
 @if (Session::get('vista_previa'))
-    {{ Form::submit('Enviar',array('name'=>'boton','class' => 'btn btn-primary btn-lg')) }}
+{{ Form::submit('Enviar',array('name'=>'boton','class' => 'btn btn-primary btn-lg')) }}
 @endif
 {{ Form::close() }}
 
